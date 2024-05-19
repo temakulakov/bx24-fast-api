@@ -6,8 +6,6 @@ from datetime import datetime
 
 router = APIRouter()
 
-
-
 @router.post("/calendar/rooms")
 async def calendar_rooms():
     url = "https://intranet.gctm.ru/rest/1552/0ja3gbkg3kxex6aj/lists.element.get.json"
@@ -46,7 +44,6 @@ async def calendar_rooms():
         'data': processed_items
     }
 
-
 @router.post("/calendar/builds")
 async def calendar_builds():
     url = "https://intranet.gctm.ru/rest/1552/0ja3gbkg3kxex6aj/lists.section.get.json"
@@ -79,7 +76,6 @@ async def calendar_builds():
     return {
         'data': processed_items
     }
-
 
 @router.post("/calendar/events")
 async def calendar_events(date_range: DateRange):
@@ -149,7 +145,6 @@ async def calendar_events(date_range: DateRange):
         'data': processed_items
     }
 
-
 @router.post("/calendar/google")
 async def calendar_google(google_url: GoogleUrl):
     if not google_url.googleUrl:
@@ -168,11 +163,9 @@ async def calendar_google(google_url: GoogleUrl):
         'data': events
     }
 
-
 def get_time_only(time_str, time_format='%Y-%m-%dT%H:%M:%S%z'):
     dt = datetime.strptime(time_str, time_format)
     return dt.time()
-
 
 def get_minutes_difference(start_time, end_time):
     datetime_format = '%H:%M:%S'
@@ -180,7 +173,6 @@ def get_minutes_difference(start_time, end_time):
     start_datetime = datetime.combine(datetime.strptime(dummy_date, '%Y-%m-%d'), start_time)
     end_datetime = datetime.combine(datetime.strptime(dummy_date, '%Y-%m-%d'), end_time)
     return (end_datetime - start_datetime).seconds // 60
-
 
 @router.post("/calendar/report/day")
 async def calendar_report_day(date: DateFrom):
@@ -290,7 +282,6 @@ async def calendar_report_day(date: DateFrom):
     return {
         "data": processed_rooms
     }
-
 
 @router.post("/calendar/report/range")
 async def calendar_report_range(date_range: DateRange):

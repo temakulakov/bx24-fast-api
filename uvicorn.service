@@ -1,0 +1,11 @@
+[Unit]
+Description=Uvicorn Server
+
+[Service]
+User=your_user
+Group=your_group
+WorkingDirectory=/path/to/your/project
+ExecStart=/path/to/your/venv/bin/gunicorn -c gunicorn_conf.py app.main:app
+
+[Install]
+WantedBy=multi-user.target
