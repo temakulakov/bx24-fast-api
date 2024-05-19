@@ -42,7 +42,7 @@ async def calendar_rooms():
         processed_items.append(processed_item)
 
     return {
-        data: processed_items
+        'data': processed_items
     }
 
 
