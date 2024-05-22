@@ -388,6 +388,7 @@ async def calendar_report_range(date_range: DateRange):
             'id': room_id,
             'title': item['NAME'],
             'hours': total_event_minutes / 60,
+            'sectionId': item['SECTION_ID'],
             'percents': (total_event_minutes / total_room_minutes) * 100 if total_room_minutes > 0 else 0,
             'color': list(item['PROPERTY_318'].values())[0],
             'dateFrom': list(item['PROPERTY_316'].values())[0],
