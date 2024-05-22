@@ -132,7 +132,7 @@ async def calendar_events(date_range: DateRange):
             'actionPlaces': item.get('UF_CRM_DEAL_1712138395258'),
             'technicalSupportRequired': item.get('UF_CRM_DEAL_1712138457130'),
             'comments': item.get('UF_CRM_DEAL_1712138504154'),
-            'eventDetails': item.get('UF_CRM_DEAL_1712138530562'),
+            'eventDetails': item.get('UF_CRM_DEАЛ_1712138530562'),
             'contactFullName': item.get('UF_CRM_1714648360'),
             'assignedById': item['ASSIGNED_BY_ID'],
             'createdBy': item.get('CREATED_BY'),
@@ -190,8 +190,8 @@ async def calendar_report_day(date: DateFrom):
             "UF_CRM_1714663307", "UF_CRM_DEAL_1712138052482", "UF_CRM_DEAL_1712138132003",
             "UF_CRM_DEAL_1712138182738", "UF_CRM_DEAL_1712138239034", "OPPORTUNITY",
             "UF_CRM_DEAL_1712138336714", "UF_CRM_DEAL_1712138395258", "UF_CRM_DEAL_1712138457130",
-            "UF_CRM_DEAL_1712138504154", "UF_CRM_DEAL_1712138530562", "UF_CRM_1714648360",
-            "ASSIGNED_BY_ID", "CREATED_BY", "UF_CRM_DEAL_1712137787958", "UF_CRM_1714654129",
+            "UF_CRM_DEАЛ_1712138504154", "UF_CRM_DEАЛ_1712138530562", "UF_CRM_1714648360",
+            "ASSIGNED_BY_ID", "CREATED_BY", "UF_CRM_DEАЛ_1712137787958", "UF_CRM_1714654129",
             'UF_CRM_1715507748', 'UF_CRM_1715508611'
         ],
         "filter": {
@@ -387,8 +387,8 @@ async def calendar_report_range(date_range: DateRange):
         processed_room = {
             'id': room_id,
             'title': item['NAME'],
+            'section': int(item.get('IBLOCK_SECTION_ID', 0)),
             'hours': total_event_minutes / 60,
-            'sectionId': item['SECTION_ID'],
             'percents': (total_event_minutes / total_room_minutes) * 100 if total_room_minutes > 0 else 0,
             'color': list(item['PROPERTY_318'].values())[0],
             'dateFrom': list(item['PROPERTY_316'].values())[0],
