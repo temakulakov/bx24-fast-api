@@ -6,6 +6,11 @@ from datetime import datetime
 
 router = APIRouter()
 
+@router.get("/events")
+async def get_events():
+    return {"events": "This is a test endpoint"}
+
+
 @router.post("/calendar/rooms")
 async def calendar_rooms():
     url = "https://intranet.gctm.ru/rest/1552/0ja3gbkg3kxex6aj/lists.element.get.json"
