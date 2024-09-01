@@ -13,7 +13,7 @@ async def get_events():
 
 @router.post("/calendar/rooms")
 async def calendar_rooms():
-    url = "https://intranet.gctm.ru/rest/1552/0ja3gbkg3kxex6aj/lists.element.get.json"
+    url = "https://intranet.bakhrushinmuseum.ru/rest/3/ynm1gnbjjm2kf4vk/lists.element.get.json"
     params = {
         "IBLOCK_TYPE_ID": "lists",
         "IBLOCK_ID": "78",
@@ -51,7 +51,7 @@ async def calendar_rooms():
 
 @router.post("/calendar/builds")
 async def calendar_builds():
-    url = "https://intranet.gctm.ru/rest/1552/0ja3gbkg3kxex6aj/lists.section.get.json"
+    url = "https://intranet.bakhrushinmuseum.ru/rest/3/ynm1gnbjjm2kf4vk/lists.section.get.json"
     params = {
         "IBLOCK_TYPE_ID": "lists",
         "IBLOCK_ID": "78"
@@ -84,7 +84,7 @@ async def calendar_builds():
 
 @router.post("/calendar/events")
 async def calendar_events(date_range: DateRange):
-    url = "https://intranet.gctm.ru/rest/1552/0ja3gbkg3kxex6aj/crm.deal.list"
+    url = "https://intranet.bakhrushinmuseum.ru/rest/3/ynm1gnbjjm2kf4vk/crm.deal.list"
     params = {
         "select": [
             "ID", "TITLE", "STAGE_ID", "OPPORTUNITY", "UF_CRM_1714583071",
@@ -181,8 +181,8 @@ def get_minutes_difference(start_time, end_time):
 
 @router.post("/calendar/report/day")
 async def calendar_report_day(date: DateFrom):
-    events_url = "https://intranet.gctm.ru/rest/1552/0ja3gbkg3kxex6aj/crm.deal.list"
-    rooms_url = "https://intranet.gctm.ru/rest/1552/0ja3gbkg3kxex6aj/lists.element.get.json"
+    events_url = "https://intranet.bakhrushinmuseum.ru/rest/3/ynm1gnbjjm2kf4vk/crm.deal.list"
+    rooms_url = "https://intranet.bakhrushinmuseum.ru/rest/3/ynm1gnbjjm2kf4vk/lists.element.get.json"
 
     # Устанавливаем время для начала и конца дня
     date_from = date.dateFrom.replace(hour=0, minute=0, second=0, microsecond=0)
@@ -290,8 +290,8 @@ async def calendar_report_day(date: DateFrom):
 
 @router.post("/calendar/report/range")
 async def calendar_report_range(date_range: DateRange):
-    events_url = "https://intranet.gctm.ru/rest/1552/0ja3gbkg3kxex6aj/crm.deal.list"
-    rooms_url = "https://intranet.gctm.ru/rest/1552/0ja3gbkg3kxex6aj/lists.element.get.json"
+    events_url = "https://intranet.bakhrushinmuseum.ru/rest/3/ynm1gnbjjm2kf4vk/crm.deal.list"
+    rooms_url = "https://intranet.bakhrushinmuseum.ru/rest/3/ynm1gnbjjm2kf4vk/lists.element.get.json"
 
     # Устанавливаем время для начала и конца периода
     date_from = date_range.dateFrom.replace(hour=0, minute=0, second=0, microsecond=0)
