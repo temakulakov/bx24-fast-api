@@ -37,11 +37,11 @@ async def calendar_rooms():
     for item in items:
         processed_item = {
             'id': int(item['ID']),
-            'color': list(item['PROPERTY_318'].values())[0],
+            'color': list(item['PROPERTY_317'].values())[0],
             'title': item['NAME'],
             'section': int(item['IBLOCK_SECTION_ID']),
-            'dateFrom': parse_datetime(list(item['PROPERTY_316'].values())[0]),
-            'dateTo': parse_datetime(list(item['PROPERTY_317'].values())[0])
+            'dateFrom': parse_datetime(list(item['PROPERTY_315'].values())[0]),
+            'dateTo': parse_datetime(list(item['PROPERTY_316'].values())[0])
         }
         processed_items.append(processed_item)
 
